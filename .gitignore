@@ -1,0 +1,12 @@
+# Derlenmiş dosyalar ve klasörler
+build/
+*.pyc
+__pycache__/
+*.exe
+*.zip
+*.toc
+*.pkg
+*.pdf
+*.html
+*.txt
+localpycs/
