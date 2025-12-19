@@ -18,7 +18,7 @@ Bu proje, apartmanlar için kolayca fatura oluşturmanıza olanak tanıyan bir m
    python main.py
    ```
    
-_Pair Extraordinaire_
+```_Pair Extraordinaire_```
 
 ## Gereksinimler
 - PyQt5
