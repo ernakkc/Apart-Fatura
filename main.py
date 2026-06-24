@@ -56,6 +56,9 @@ class InvoiceApp(QWidget):
         self.name_edit = QLineEdit()
         layout.addRow("Misafir Adı:", self.name_edit)
 
+        self.phone_edit = QLineEdit()
+        layout.addRow("Telefon Numarası:", self.phone_edit)
+
         self.checkin_edit = QDateEdit()
         self.checkin_edit.setCalendarPopup(True)
         self.checkin_edit.setDate(QDate.currentDate())
@@ -122,6 +125,7 @@ class InvoiceApp(QWidget):
 
     def clear_fields(self):
         self.name_edit.clear()
+        self.phone_edit.clear()
         self.checkin_edit.setDate(QDate.currentDate())
         self.checkout_edit.setDate(QDate.currentDate().addDays(1))
         self.rate_edit.setValue(100.0)
@@ -156,7 +160,7 @@ class InvoiceApp(QWidget):
         11: "1+0",
         12: "1+0",
         13: "1+0",
-        14: "1+0",
+        14: "1+1",
     }
 
     def update_oda_combo(self, kat):
@@ -189,6 +193,8 @@ class InvoiceApp(QWidget):
 
         self.draw_text(can, 70, 680, "NAME:", is_Bold=True)
         self.draw_text(can, 115, 680, name)
+        self.draw_text(can, 70, 665, "Phone:", is_Bold=True)
+        self.draw_text(can, 115, 665, self.phone_edit.text().strip())
         self.draw_text(can, 450, 680, "Invoice Date:", is_Bold=True)
         self.draw_text(can, 450, 665, invoice_created_date)
         self.draw_text(can, 70, 665, "Floor:", is_Bold=True)
